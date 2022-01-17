@@ -154,44 +154,99 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
   </script>
+	
+	<script >
+    /*===== MENU SHOW Y HIDDEN =====*/ 
+const navMenu = document.getElementById('nav-menu'),
+      toggleMenu = document.getElementById('nav-toggle'),
+      closeMenu = document.getElementById('nav-close')
+
+/*SHOW*/ 
+toggleMenu.addEventListener('click', ()=>{
+    navMenu.classList.toggle('show')
+})
+
+/*HIDDEN*/
+closeMenu.addEventListener('click', ()=>{
+    navMenu.classList.remove('show')
+})
+
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll('.nav__link');   
+
+function linkAction(){
+  /*Active link*/
+  navLink.forEach(n => n.classList.remove('active'));
+  this.classList.add('active');
+  
+  /*Remove menu mobile*/
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
+  </script>
+	
+	
 </head>
 <body>
 
-<header class="header" style="color: white;">
+<!---------------------header start------------------------------------------->
+<header class="header">
+  <div class="header-inner">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-lg my-navbar">
+  <a class="navbar-brand" href="index.html"><span class="logo">
+    <img src="file:///E:/project/image/3d%20logo%205.png" class="img-fluid" style="width:12rem; margin-top:  -4rem;"></span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+  </button>
 
-            <nav class="nav" id="nav-menu">
-                <div class="nav__content bd-grid">
-                            <a href="#" class="logo"><img src="file:///E:/project/image/3d%20logo%205.png" style="width: 20%; height: 15%;"></a>
-                           
-                        </div>
-                    </div>
-   
-                    <div class="nav__menu">
-                        <ul class="nav__list">
-                            <li class="nav__item" style="margin-top: 4rem;"><a href="#" class="nav__link active" style="color: #0084ff; ">Home</a></li>
-                            <li class="nav__item" style="margin-top: 4rem;  "><a href="#" class="nav__link" style="color: #0084ff; ">Courses</a></li>
-                            <li class="nav__item" style="margin-top: 4rem; "><a href="#" class="nav__link" style="color: #0084ff; ">Scholarship</a></li>
-                            <li class="nav__item" style="margin-top: 4rem; "><a href="#" class="nav__link" style="color:  #0084ff; ">Partners</a></li>
-                            <li class="nav__item" style="margin-top: 4rem; "><a href="#" class="nav__link" style="color:  #0084ff; ">Contact</a></li>
-                             
-     						 <li class="nav__item" style="margin-top: 4rem;   color:  #0084ff; "><a href="login.html" class="nav__link" style="color: #0084ff;" ><span class="glyphicon glyphicon-log-in" style="color:  #0084ff; font-size: 2rem;" ></span> Login</a></li>
-                        </ul>
-                    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav m-auto">
 
-                  
-                    <!---
-    
-                    <div class="nav__social">
-                        <a href="#" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
-                        <a href="#" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
-                        <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a>
-                    </div>
-                  -->
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Course
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="margin-right: 2rem; margin-left: 2rem;">Scholarship<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="margin-right: 2rem; margin-left: 1rem;">Partner</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="BD.html"style="margin-right: 2rem; margin-left: 1rem;">Dashboard</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#"style="margin-right: 2rem; margin-left: 1rem;">Result</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"style="margin-right: 2rem; margin-left: 1rem;">Contact</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="header-btn my-2 my-sm-0" type="submit"><a href="login.html" style="color: black;font-size: 2rem;"> Log In</a></button>
+    </form>
+  </div>
+</nav>
 
-                </div>
-            </nav>
+    </div>
+  </div>
+
 
 </header>
+
+
+
+
 <!--------------------------home -------------------->
 
 <section id="home">
